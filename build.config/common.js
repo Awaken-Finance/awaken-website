@@ -17,11 +17,19 @@ module.exports = {
       },
       {
         protocol: 'https',
-        hostname: 'cms.awaken.finance',
+        hostname: 'cms-v2.awaken.finance',
       },
       {
         protocol: 'https',
-        hostname: 'test-cms.awaken.finance',
+        hostname: 'awaken-cms-mainnet.s3.ap-northeast-1.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'test-cms-v2.awaken.finance',
+      },
+      {
+        protocol: 'https',
+        hostname: 'awaken-cms-testnet.s3.ap-northeast-1.amazonaws.com',
       },
       {
         protocol: 'https',

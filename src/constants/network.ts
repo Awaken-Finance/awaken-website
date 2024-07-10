@@ -8,12 +8,12 @@ export type WebsiteNetworkConfig = {
 export const BackEndNetWorkMap: Record<string, WebsiteNetworkConfig> = {
   Awaken: {
     dev: {
-      cmsUrl: 'https://test-cms.awaken.finance/',
-      s3Url: 'https://test-cms.awaken.finance/assets/',
+      cmsUrl: 'https://test-cms-v2.awaken.finance/',
+      s3Url: 'https://awaken-cms-testnet.s3.ap-northeast-1.amazonaws.com/',
     },
     mainnet: {
-      cmsUrl: 'https://cms.awaken.finance/',
-      s3Url: 'https://cms.awaken.finance/assets/',
+      cmsUrl: 'https://cms-v2.awaken.finance/',
+      s3Url: 'https://awaken-cms-mainnet.s3.ap-northeast-1.amazonaws.com/',
     },
   },
   // Add More ...
