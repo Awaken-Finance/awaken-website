@@ -48,6 +48,9 @@ export default function FeatureCard(props: FeatureCardProps) {
           src={iconHover.filename_disk ? s3Url + iconHover.filename_disk : ''}
           width={iconHover.width ?? DEFAULT_ICON_SIZE.WIDTH}
           height={iconHover.height ?? DEFAULT_ICON_SIZE.HEIGHT}
+          style={{
+            display: !isHover ? 'none' : 'block',
+          }}
           alt="featureIcon"
         />
         <CommonImage
