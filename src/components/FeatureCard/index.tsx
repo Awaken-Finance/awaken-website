@@ -36,7 +36,7 @@ export default function FeatureCard(props: FeatureCardProps) {
   }
   return (
     <div
-      className={clsx(styles.featureCardWrapper, isHover && styles.featureCardWrapperHover, className)}
+      className={clsx(styles.featureCardWrapper, className)}
       style={style}
       onMouseOver={onMouseOver}
       onMouseOut={onMouseOut}>
