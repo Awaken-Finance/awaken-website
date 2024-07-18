@@ -7,21 +7,21 @@ import BrandModule from '@/modules/BrandModule';
 import { IHomePageProps } from '@/types/pages/home';
 import GraphicTextModule from '@/modules/GraphicTextModule';
 import { ModuleType } from '@/types/modules';
-import { getGlobalConfig } from '@/api/utils';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { useEffectOnce } from 'react-use';
 import CardListModule from '@/modules/CardListModule';
 import PartnersModule from '@/modules/PartnersModule';
 import FeatureCardModule from '@/modules/FeatureCardModule';
 import InfiniteScrollCarouselModule from '@/modules/InfiniteScrollCarouselModule';
 import { ButtonBelowTextModule } from '@/modules/ButtonBelowText';
+import clsx from 'clsx';
 
-export default function HomeMain({ headerData, footerData, pageData }: IHomePageProps) {
+export default function HomeMain({ headerData, footerData, pageData, globalConfig }: IHomePageProps) {
   const uaType = useUserAgent();
 
+  const [isShow, setIsShow] = useState(false);
   const setGlobalConfig = useCallback(async () => {
     if (typeof document !== 'undefined') {
-      const globalConfig = await getGlobalConfig();
       const colorObj = {
         ...globalConfig.themeColor,
         ...globalConfig.functionalColor,
@@ -30,15 +30,16 @@ export default function HomeMain({ headerData, footerData, pageData }: IHomePage
       Object.entries(colorObj).forEach((ele) => {
         document?.body.style.setProperty(`--${ele[0]}`, ele[1]);
       });
+      setIsShow(true);
     }
-  }, []);
+  }, [globalConfig]);
 
   useEffectOnce(() => {
     setGlobalConfig();
   });
 
   return (
-    <main className="home-page">
+    <main className={clsx('home-page', !isShow && 'home-page-hide')}>
       <NavHeader path={ROUTER.DEFAULT} data={headerData} />
       <div className="empty-container" style={{ height: 80 }}></div>
 
