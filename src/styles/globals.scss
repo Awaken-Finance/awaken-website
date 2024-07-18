@@ -87,6 +87,10 @@ a {
   }
 }
 
+.home-page-hide {
+  visibility: hidden;
+}
+
 .empty-container {
   min-width: $page-min-width;
 }

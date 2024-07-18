@@ -1,13 +1,8 @@
 import { NavigationType, ROUTER } from '@/constants/enum';
-import router from 'next/router';
 
 export function jumpOrScrollToTop(path: ROUTER, callback?: () => void): void {
-  if (path === router.pathname) {
-    window.scrollTo(0, 0);
-    callback?.();
-  } else {
-    router.push(path);
-  }
+  window.scrollTo(0, 0);
+  callback?.();
 }
 
 export function openWithBlank(url: string, target = '_blank'): void {
