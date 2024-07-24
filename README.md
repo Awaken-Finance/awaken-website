@@ -4,7 +4,7 @@ In the project directory, you can run:
 
 ### `yarn`
 
-Install dependencies.
+Install dependencies. 
 
 ### `yarn dev`
 
