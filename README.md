@@ -8,6 +8,7 @@ Install dependencies.
 
 ### `yarn dev`
 
+### `yarn dev:pro`
 
 ### `yarn build:dev`
 
